@@ -858,9 +858,10 @@ function QuizPage({ notes, pendingQuizNoteId, pendingQuizNoteTitle, notify }) {
 
   // Run once on mount to kick off a pending quiz
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (pendingQuizNoteId && phase === "generating") generateQuiz(pendingQuizNoteId);
-  }, []);
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  if (pendingQuizNoteId && phase === "generating") generateQuiz(pendingQuizNoteId);
+}, []);
 
   useEffect(() => {
     if (phase === "active" && !submitted) {
